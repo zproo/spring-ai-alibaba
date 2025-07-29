@@ -95,7 +95,8 @@ spring:
               - "classpath:/data/"
         # 报告导出路径配置
         export:
-          path: ${AI_DEEPRESEARCH_EXPORT_PATH}
+#          path: ${AI_DEEPRESEARCH_EXPORT_PATH}
+          path: /Users/qianzhao/【开发工作区】/github/spring-ai-alibaba/spring-ai-alibaba-deepresearch/src/main/resources
         reflection:
           enabled: true
           max-attempts: 1

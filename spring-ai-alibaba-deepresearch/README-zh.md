@@ -127,7 +127,7 @@ docker run -d \
 curl --location 'http://localhost:8080/chat/stream' \
 --header 'Content-Type: application/json' \
 --data '{
-    "thread_id": "__default_",
+    "thread_id": "__default__",
     "enable_background_investigation": false,
     "query": "请为我分析泡泡玛特现象级爆火的原因",
     "max_step_num": 2,
@@ -147,7 +147,7 @@ Langfuse 配置
 5. 将凭据编码为 Base64：
    ```bash
    echo -n "public_key:secret_key" | base64
-   ``` 
+   ```
    ```Windows PowerShell
    [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("public_key:secret_key"))
    ```

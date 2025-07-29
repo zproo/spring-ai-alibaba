@@ -75,11 +75,11 @@ public class SearchInfoService {
 						}
 						result.put("url", url);
 						// try to obtain icon
-						String icon = info.content().icon();
-						if (icon == null || icon.isEmpty()) {
-							icon = getIcon(url);
-						}
-						result.put("icon", icon);
+						// String icon = info.content().icon();
+						// if (icon == null || icon.isEmpty()) {
+						// 	icon = getIcon(url);
+						// }
+						// result.put("icon", icon);
 
 						if (jinaCrawlerService == null || !isUrl) {
 							result.put("content", info.content().content());

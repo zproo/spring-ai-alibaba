@@ -29,7 +29,7 @@ import com.alibaba.cloud.ai.graph.checkpoint.constant.SaverConstant;
 import com.alibaba.cloud.ai.graph.checkpoint.savers.MemorySaver;
 import com.alibaba.cloud.ai.graph.exception.GraphRunnerException;
 import com.alibaba.cloud.ai.graph.exception.GraphStateException;
-import com.alibaba.cloud.ai.graph.observation.GraphObservationLifecycleListener;
+// import com.alibaba.cloud.ai.graph.observation.GraphObservationLifecycleListener;
 import com.alibaba.cloud.ai.graph.state.StateSnapshot;
 import io.micrometer.observation.ObservationRegistry;
 import org.slf4j.Logger;
@@ -70,8 +70,8 @@ public class ChatController {
 		this.compiledGraph = stateGraph.compile(CompileConfig.builder()
 			.saverConfig(saverConfig)
 			.interruptBefore("human_feedback")
-			.withLifecycleListener(new GraphObservationLifecycleListener(
-					observationRegistry.getIfUnique(() -> ObservationRegistry.NOOP)))
+			// .withLifecycleListener(new GraphObservationLifecycleListener(
+			// 		observationRegistry.getIfUnique(() -> ObservationRegistry.NOOP)))
 			.build());
 		this.compiledGraph.setMaxIterations(deepResearchProperties.getMaxIterations());
 		this.searchBeanUtil = searchBeanUtil;
