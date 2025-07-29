@@ -34,11 +34,11 @@ public class PlanToolExecuteResult extends ToolExecuteResult {
 		this.plan = plan;
 	}
 
-	String getId() {
+	public String getId() {
 		return id;
 	}
 
-	void setId(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

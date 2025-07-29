@@ -24,7 +24,7 @@ import com.alibaba.cloud.ai.graph.exception.GraphStateException;
 import com.alibaba.cloud.ai.graph.OverAllState;
 import com.alibaba.cloud.ai.graph.StateGraph;
 import com.alibaba.cloud.ai.graph.action.EdgeAction;
-import com.alibaba.cloud.ai.graph.observation.GraphObservationLifecycleListener;
+// import com.alibaba.cloud.ai.graph.observation.GraphObservationLifecycleListener;
 import io.micrometer.observation.ObservationRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,8 +46,8 @@ public class CustomerServiceController {
 	public CustomerServiceController(@Qualifier("workflowGraph") StateGraph stateGraph,
 			ObjectProvider<ObservationRegistry> observationRegistry) throws GraphStateException {
 		this.compiledGraph = stateGraph.compile(CompileConfig.builder()
-			.withLifecycleListener(new GraphObservationLifecycleListener(
-					observationRegistry.getIfUnique(() -> ObservationRegistry.NOOP)))
+			// .withLifecycleListener(new GraphObservationLifecycleListener(
+			// 		observationRegistry.getIfUnique(() -> ObservationRegistry.NOOP)))
 			.build());
 	}
 

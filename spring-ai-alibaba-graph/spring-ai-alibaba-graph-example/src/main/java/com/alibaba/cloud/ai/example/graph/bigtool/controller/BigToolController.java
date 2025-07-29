@@ -101,7 +101,7 @@ public class BigToolController {
 		System.out.println(graphRepresentation.content());
 		System.out.println("\n\n");
 
-		this.compiledGraph = stateGraph.compile(config);
+		this.compiledGraph = stateGraph.compile();
 
 	}
 

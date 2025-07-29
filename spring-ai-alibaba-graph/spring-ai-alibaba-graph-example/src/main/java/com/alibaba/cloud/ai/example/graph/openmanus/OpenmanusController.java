@@ -30,6 +30,7 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
+import org.springframework.ai.tool.resolution.ToolCallbackResolver;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -83,10 +84,46 @@ public class OpenmanusController {
 	public void initGraph() throws GraphStateException {
 
 		SupervisorAgent supervisorAgent = new SupervisorAgent(PlanningTool.INSTANCE);
-		ReactAgent planningAgent = new ReactAgent("planningAgent", planningClient, Builder.getFunctionCallbackList(),
-				10);
+
+		// 创建 ToolCallbackResolver
+		ToolCallbackResolver toolCallbackResolver = toolName -> {
+			// 根据工具名称返回对应的 ToolCallback
+			switch (toolName) {
+				case "get_plan":
+					return Builder.getFunctionCallbackList().stream()
+							.filter(tc -> tc.getToolDefinition().name().equals("get_plan"))
+							.findFirst()
+							.orElse(null);
+				case "google_search":
+					return Builder.getManusAgentFunctionCallbacks().stream()
+							.filter(tc -> tc.getToolDefinition().name().equals("google_search"))
+							.findFirst()
+							.orElse(null);
+				case "browser_use":
+					return Builder.getManusAgentFunctionCallbacks().stream()
+							.filter(tc -> tc.getToolDefinition().name().equals("browser_use"))
+							.findFirst()
+							.orElse(null);
+				case "file_saver":
+					return Builder.getManusAgentFunctionCallbacks().stream()
+							.filter(tc -> tc.getToolDefinition().name().equals("file_saver"))
+							.findFirst()
+							.orElse(null);
+				case "python_execute":
+					return Builder.getManusAgentFunctionCallbacks().stream()
+							.filter(tc -> tc.getToolDefinition().name().equals("python_execute"))
+							.findFirst()
+							.orElse(null);
+				default:
+					return null;
+			}
+		};
+
+		// 使用 ToolCallbackResolver 创建 ReactAgent
+		ReactAgent planningAgent = new ReactAgent("planningAgent", planningClient, Builder.getFunctionCallbackList(), 10);
 		planningAgent.getAndCompileGraph();
-		ReactAgent stepAgent = new ReactAgent("stepAgent", stepClient, Builder.getManusAgentFunctionCallbacks(), 10);
+
+		ReactAgent stepAgent = new ReactAgent("stepAgent", stepClient, toolCallbackResolver, 10);
 		stepAgent.getAndCompileGraph();
 
 		StateGraph graph = new StateGraph(() -> {

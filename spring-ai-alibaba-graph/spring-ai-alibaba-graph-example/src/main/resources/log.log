@@ -1,0 +1,567 @@
+
+
+2025-07-29T15:29:46.480+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.a.m.s.a.McpServerAutoConfiguration   : Enable tools capabilities, notification: true
+2025-07-29T15:29:46.480+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.a.m.s.a.McpServerAutoConfiguration   : Registered tools: 2
+2025-07-29T15:29:46.480+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.a.m.s.a.McpServerAutoConfiguration   : Enable resources capabilities, notification: true
+2025-07-29T15:29:46.481+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.a.m.s.a.McpServerAutoConfiguration   : Enable prompts capabilities, notification: true
+2025-07-29T15:29:46.481+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.a.m.s.a.McpServerAutoConfiguration   : Enable completions capabilities
+2025-07-29T15:29:46.665+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoints beneath base path '/actuator'
+2025-07-29T15:29:46.700+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18080 (http) with context path '/'
+2025-07-29T15:29:46.710+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] c.a.c.ai.example.graph.GraphApplication  : Started GraphApplication in 23.152 seconds (process running for 23.466)
+2025-07-29T15:29:46.713+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [           main] [                                                 ] c.a.c.ai.example.graph.GraphApplication  : GraphApplication start success
+2025-07-29T15:29:46.800+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [on(5)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-29T15:29:46.801+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [on(5)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-29T15:29:46.809+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [on(5)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2025-07-29T15:29:52.664+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.openmanus.tool.PlanningTool  : PlanningTool toolInput:{"command":"create","title":"查询阿里巴巴近一周的股票信息","steps":["打开浏览器并导航到百度首页","输入“阿里巴巴最近一周股价”并开始搜索","根据搜索结果，采集页面信息，获得阿里巴巴的近一周的股价信息"]}
+2025-07-29T15:29:59.116+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "navigate", "url": "https://www.baidu.com"}
+2025-07-29T15:30:03.573+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "input_text", "index": 0, "text": "阿里巴巴最近一周股价"}
+2025-07-29T15:30:11.200+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "execute_js", "script": "document.querySelector('#kw').value = '阿里巴巴最近一周股价';"}
+2025-07-29T15:30:14.459+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "key_enter", "index": 0}
+2025-07-29T15:30:18.296+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "execute_js", "script": "document.querySelector('#su').click();"}
+2025-07-29T15:30:22.985+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : BrowserUseTool toolInput:{"action": "get_text"}
+2025-07-29T15:30:23.168+08:00  INFO 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.a.c.a.e.g.o.tool.BrowserUseTool        : get_text body is 阿里巴巴最近一周股价
+百度一下
+百度首页设置登录
+网页图片资讯视频笔记地图贴吧文库更多
+你的专属AI助手
+想了解更多关于“阿里巴巴最近一周股价”的解答吗？
+相关搜索
+阿里巴巴今日股价
+阿里巴巴的最新股价
+阿里巴巴今天股价
+阿里巴巴股价实时行情
+阿里巴巴股票价格行情
+阿里巴巴股价走势
+
+换一换
+热搜榜杭州榜民生榜财经榜
+
+万物共生 中国主张
+1
+“钱和车都没了 但我救了1个人”热
+2
+北京最大降水量315毫米什么概念新
+3
+华北局地强降雨 抢险救援加紧进行
+4
+北京朝阳降雨量下至全国第一热
+5
+女子电动车失踪多日 偷车贼是自己
+6
+汪苏泷方发布律师声明新
+7
+柬泰停火 两国领导人双双感谢中国热
+8
+95后研究生博主卖创意烧饼涨粉40万
+9
+北京暴雨有多大？4天下了近1年的雨新
+10
+霍启刚发文祝贺郭晶晶
+11
+大爷大妈坐铁轨逼停火车？不实
+12
+北京极端强降雨已致30人遇难热
+13
+黄晓明肖战赵丽颖为北京捐赠物资
+14
+“老头乐”排队上高速 已全部劝返
+15
+A股三大指数均收涨 创业板指涨1.86%新
+搜索工具
+百度为您找到以下结果
+阿里巴巴-W[09988]港股实时行情 - 百度股市通
+港股
+美股
+120.200港元-0.400-0.33%
+交易中 07-29 15:31:00 北京时间
+港币柜台
+今开
+119.200
+最高
+120.200
+成交量
+4709万股
+昨收
+120.600
+最低
+118.100
+成交额
+56.10亿
+换手率
+0.25%
+市盈(TTM)
+16.35
+总市值
+2.29万亿
+ADR换算价(HKD)
+120.176
+相对港股 -0.02%
+分时
+五日
+日K
+周K
+月K
+季K
+年K
+更多
+09:30
+,
+12:00/13:00
+,
+16:00
+120.200
+,
+119.200
+,
+118.200
+-0.33%
+,
+-1.16%
+,
+-1.99%
+股票开户
+热门股评
+FinScope AI助手
+添加自选
+股评 - 阿里巴巴-W
+阿里巴巴-W(09988)
+120.200港元-0.400-0.33%
+股票开户
+投票
+今日
+本周
+本月
+今年
+看涨169人
+看跌188人
+47%
+53%
+股友71u31z8506：和阿里传绯闻的恒生电子涨停，阿里这个真主竟然还趴着装死，烂透了
+2分钟前东方财富
+就是好股：阿里就像当年小米一样，散户低位不愿买，不愿等，天天追烂股，等阿里到了300就拍断大腿，天天痛苦的回忆
+5分钟前东方财富
+中国科技天下第一：这个股抄底是真的挺简单的，每次都能买在最低
+29分钟前东方财富
+查看更多
+
+发表
+gushitong.baidu.com
+最新整理!阿里股票价格走势迎来大爆发!这类个股一定要留意
+本月124人已申请相关服务
+阿里股票价格走势相关产业怎么看?想布局该板块的散户,一定要花1分钟看完这些关键投资逻辑.就能把握这一轮机会...
+股掌柜证券投资咨询 2025-07广告
+阿里巴巴(BABA)股票价格_行情_走势图—东方财富网
+最近访问:阿里巴巴 --- 全球指数美股行情美股吧国际期货 - -- 今开: - 最高价: - 成交量: - 外盘: - 昨收: - 最低价: - 成交额: - 内盘: - 总股本: - 振幅: - 换手率: - 每股收益TTM: - 总市值: - 市净率MRQ: - 市盈率TTM: - 每股净资产: - 美国 经济数据>>美国 市场快讯>> F10档案:核
+东方财富网
+阿里巴巴(BABA)股票价格_行情_走势图-手机东方财富 财经门户,提供...
+手机东方财富网是东方财富网的手机门户网站,为亿万用户打造一个手机联通世界的超级平台,提供7*24小时全面及时的财经中文资讯,内容覆盖国内外突发事件、股市资讯、全球新闻、产业资讯、实用信息等。手机东方财富网触屏版 - eastmoney.com
+东方财富
+大家还在搜
+阿里巴巴今日股价
+阿里巴巴的最新股价
+阿里巴巴今天股价
+阿里巴巴股价实时行情
+阿里巴巴股票价格行情
+阿里巴巴股价走势
+阿里巴巴最新股票价格
+美股阿里巴巴今日股价
+阿里巴巴(BABA)股票股价_股价行情_财报_数据报告 - 雪球
+阿里巴巴(BABA)股票股价_股价行情_财报_数据报告BABA,阿里巴巴,雪球,雪球财经,阿里巴巴行情,阿里巴巴交易,阿里巴巴新闻,阿里巴巴资讯,阿里巴巴价格,阿里巴巴实时行情,阿里巴巴资金流向,阿里巴巴研究报告,阿里巴巴点评,阿里巴巴讨论,阿里巴巴财报,阿里巴巴财务分析
+雪球
+阿里巴巴(BABA) 股价、新闻、报价和图表 - 富途牛牛
+2025年7月21日阿里巴巴 (BABA) 添加自选 120.860 +0.630+0.52% 交易中 07/21 14:14 (美东) 2882.93亿总市值16.19市盈率TTM 122.310最高价118.250最低价1410.27万股成交量119.510今开120.230昨收17.04亿成交额0.63%换手率16.19市盈率(静)23.85亿总股本145.96352周最高2.05市净率2724.71亿流通值72.64252周最低1.00股息TTM22.54亿流通...
+富途牛牛
+阿里巴巴 120.03(-0.92%)_美股_新浪财经_新浪网
+新浪财经-美股频道为您提供阿里巴巴(BABA)股票股价,股票实时行情,新闻,财报,美股实时交易数据,研究报告,评级,财务指标分析等与阿里巴巴(BABA)股票相关的信息与服务
+新浪财经
+阿里巴巴(hk01688)股票价格_股票实时行情_走势图-手机新浪财经
+分时 五日 日K 周K 月K 年线 ▲▼ 打开APP查看完整版行情图指标股神榜单TOP 月收益率 1. dora的表哥 +55.88% 2. zhu02076248 +48.67% 3. 七休和尚 +36.43% 4. 财富1688 +31.46% 5. 用户7801503839 +29.53% 查看持仓 全球大类资产表现 恒生指数 2.33% 首尔综合指数 1.21% 上证指数 -0.06% 查看...
+新浪财经
+阿里巴巴BABA - 新浪财经
+舆情机会:阿里巴巴-1.06% 打开APP 行情中心 阿里巴巴BABA APP下载 115.730 -1.240-1.06% 未开盘Jul 16 04:00PM EDT 今开 115.500 最高 116.030 量 1443.90万 昨收 116.970 最低 114.040 额 16.63亿 盘后 115.730 0.000 0.00% Jul 16 08:04PM EDT ...
+新浪财经
+相关搜索
+阿里巴巴今日股价
+阿里巴巴的最新股价
+阿里巴巴股票今日价格行情
+阿里股票股价实时行情
+阿里巴巴港股价
+美国阿里巴巴股价
+09988 阿里巴巴股价
+阿里巴巴股票最新走势
+阿里巴巴今日股市行情
+阿里巴巴市值
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+下一页 >
+帮助举报用户反馈企业推广
+2025-07-29T15:30:34.624+08:00 ERROR 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.alibaba.cloud.ai.graph.CompiledGraph   : java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+
+java.util.concurrent.ExecutionException: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.agent.ReactAgent$SubGraphNodeAdapter.apply(ReactAgent.java:447) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.example.graph.openmanus.OpenmanusController.simpleChat(OpenmanusController.java:160) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[na:na]
+	at org.springframework.ai.openai.OpenAiChatModel.createRequest(OpenAiChatModel.java:604) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:186) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:181) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.ChatModelCallAdvisor.adviseCall(ChatModelCallAdvisor.java:54) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor.adviseCall(SimpleLoggerAdvisor.java:74) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatClientResponse$1(DefaultChatClient.java:469) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:467) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:446) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.chatResponse(DefaultChatClient.java:435) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.call(LlmNode.java:209) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.apply(LlmNode.java:97) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	... 83 common frames omitted
+
+2025-07-29T15:30:34.630+08:00 ERROR 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [6888786d4f2b0b7bc5e5559d68185bbf-c5e5559d68185bbf] c.alibaba.cloud.ai.graph.CompiledGraph   : java.util.concurrent.ExecutionException: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+
+java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.example.graph.openmanus.OpenmanusController.simpleChat(OpenmanusController.java:160) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.util.concurrent.ExecutionException: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.agent.ReactAgent$SubGraphNodeAdapter.apply(ReactAgent.java:447) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	... 67 common frames omitted
+Caused by: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[na:na]
+	at org.springframework.ai.openai.OpenAiChatModel.createRequest(OpenAiChatModel.java:604) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:186) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:181) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.ChatModelCallAdvisor.adviseCall(ChatModelCallAdvisor.java:54) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor.adviseCall(SimpleLoggerAdvisor.java:74) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatClientResponse$1(DefaultChatClient.java:469) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:467) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:446) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.chatResponse(DefaultChatClient.java:435) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.call(LlmNode.java:209) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.apply(LlmNode.java:97) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	... 83 common frames omitted
+
+2025-07-29T15:30:34.644+08:00 ERROR 71022 --- [spring-ai-alibaba-graph-example] [io-18080-exec-2] [                                                 ] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.util.concurrent.CompletionException: java.util.concurrent.ExecutionException: java.util.concurrent.ExecutionException: java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')] with root cause
+
+java.lang.ClassCastException: class java.util.LinkedHashMap cannot be cast to class org.springframework.ai.chat.messages.Message (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; org.springframework.ai.chat.messages.Message is in unnamed module of loader 'app')
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[na:na]
+	at org.springframework.ai.openai.OpenAiChatModel.createRequest(OpenAiChatModel.java:604) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:186) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:181) ~[spring-ai-openai-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.ChatModelCallAdvisor.adviseCall(ChatModelCallAdvisor.java:54) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor.adviseCall(SimpleLoggerAdvisor.java:74) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextCall$1(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextCall(DefaultAroundAdvisorChain.java:110) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatClientResponse$1(DefaultChatClient.java:469) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.6.jar:1.14.6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:467) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatClientResponse(DefaultChatClient.java:446) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.chatResponse(DefaultChatClient.java:435) ~[spring-ai-client-chat-1.0.0.jar:1.0.0]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.call(LlmNode.java:209) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.node.LlmNode.apply(LlmNode.java:97) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.agent.ReactAgent$SubGraphNodeAdapter.apply(ReactAgent.java:447) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeAction.lambda$node_async$0(AsyncNodeAction.java:48) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.action.AsyncNodeActionWithConfig.lambda$of$1(AsyncNodeActionWithConfig.java:54) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.evaluateAction(CompiledGraph.java:799) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph$AsyncNodeGenerator.next(CompiledGraph.java:949) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.AsyncGenerator$WithEmbed.next(AsyncGenerator.java:140) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.async.InternalIterator.next(AsyncGenerator.java:429) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:457) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.graph.CompiledGraph.invoke(CompiledGraph.java:467) ~[spring-ai-alibaba-graph-core-1.0.0.3-20250703.145749-2.jar:1.0.0.3-SNAPSHOT]
+	at com.alibaba.cloud.ai.example.graph.openmanus.OpenmanusController.simpleChat(OpenmanusController.java:160) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]

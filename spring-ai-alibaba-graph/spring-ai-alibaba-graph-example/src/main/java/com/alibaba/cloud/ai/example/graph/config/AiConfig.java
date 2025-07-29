@@ -16,6 +16,7 @@
 
 package com.alibaba.cloud.ai.example.graph.config;
 
+import com.alibaba.cloud.ai.graph.CompileConfig;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.openai.OpenAiChatModel;
@@ -45,4 +46,14 @@ public class AiConfig {
 		return builder.build();
 	}
 
+
+	/**
+	 * Initialize CompileConfig bean for graph compilation
+	 * @return CompileConfig instance
+	 */
+	@Bean
+	@Primary
+	public CompileConfig compileConfig() {
+		return CompileConfig.builder().build();
+	}
 }

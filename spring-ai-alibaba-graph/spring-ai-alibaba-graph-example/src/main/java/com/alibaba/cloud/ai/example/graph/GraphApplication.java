@@ -18,6 +18,8 @@ package com.alibaba.cloud.ai.example.graph;
 
 import com.alibaba.cloud.ai.example.graph.react.tool.weather.function.WeatherProperties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -28,9 +30,13 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = { "com.alibaba.cloud.ai" })
 public class GraphApplication {
 
+	private static final Logger log = LoggerFactory.getLogger(GraphApplication.class);
+
 	public static void main(String[] args) {
 
 		SpringApplication.run(GraphApplication.class, args);
+
+		log.info("GraphApplication start success");
 	}
 
 }

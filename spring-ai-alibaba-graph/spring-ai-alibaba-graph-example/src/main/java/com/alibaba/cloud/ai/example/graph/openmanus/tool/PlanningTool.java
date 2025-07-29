@@ -158,6 +158,18 @@ public class PlanningTool implements BiFunction<String, ToolContext, String> {
 			switch (command) {
 				case "create":
 					return createPlan(planId, title, steps, context);
+				case "update":
+					return updatePlan(planId, title, steps).getId();
+				case "list":
+					return listPlans().getId();
+				case "get":
+					return getPlan(planId).getId();
+				case "set_active":
+					return setActivePlan(planId).getId();
+				case "mark_step":
+					return markStep(planId, stepIndex, stepStatus, stepNotes).getId();
+				case "delete":
+					return deletePlan(planId).getId();
 				default:
 					throw new RuntimeException("Unrecognized command: " + command
 							+ ". Allowed commands are: create, update, list, get, set_active, mark_step, delete");
