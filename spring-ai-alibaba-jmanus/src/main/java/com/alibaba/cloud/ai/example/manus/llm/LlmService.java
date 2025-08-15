@@ -22,6 +22,7 @@ import com.alibaba.cloud.ai.example.manus.event.JmanusListener;
 import com.alibaba.cloud.ai.example.manus.event.ModelChangeEvent;
 import io.micrometer.observation.ObservationRegistry;
 import jakarta.annotation.PostConstruct;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
@@ -436,7 +437,8 @@ public class LlmService implements ILlmService, JmanusListener<ModelChangeEvent>
 			.codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(10 * 1024 * 1024)) // 10MB
 			.filter((request, next) -> next.exchange(request).timeout(Duration.ofMinutes(10)));
 
-		String completionsPath = dynamicModelEntity.getCompletionsPath();
+        String completionsPath = StringUtils.isBlank(dynamicModelEntity.getCompletionsPath()) ? "/v1/chat/completions" :
+                dynamicModelEntity.getCompletionsPath();
 
 		return new OpenAiApi(dynamicModelEntity.getBaseUrl(), new SimpleApiKey(dynamicModelEntity.getApiKey()),
 				multiValueMap, completionsPath, "/v1/embeddings", restClientBuilder, enhancedWebClientBuilder,
